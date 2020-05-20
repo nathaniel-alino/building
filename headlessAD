@@ -31,6 +31,33 @@ Create a domain
 
 Wait, Read the Warnings, Notice the VM auto reboots, Wait again as Applying computer settings
 
+Bonus:
+Create another domain admin user and also profess your love of Linux
+  New-ADUser -Name "root" -GivenName root -Surname admin -SamAccountName root -UserPrincipalName root@sunlab.com
+
+
+
+Notice that the account is still disabled
+  Get-ADUser -Identity root
+
+Make it a domain admin
+  Add-ADGroupMember "Domain Admins" root
+  Get-ADGroupMember -Identity "Domain Admins"
+
+Set a powerful password
+  Set-ADAccountPassword 'CN=root,CN=Users,DC=sunlab,DC=com' -Reset -NewPassword (ConvertTo-SecureString -AsPlainText "P@ssw0rd" -Force)
+
+Finally, enable the new domain admin account
+  Enable-ADAccount -Identity root
+
+Marvel at what you have done
+  Get-ADUser -Identity root
+
+
+
+
+
+
 
 
  
