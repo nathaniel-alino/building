@@ -1,0 +1,36 @@
+Download an ISO installer for a 180-day evaluation copy of Windows Server 2019
+  https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2019
+
+Install it on Virtual Box
+
+Run Server Configuration menu
+  sconfig
+
+Baptize your machine by giving it a name
+  case 2 Computer Name:
+
+Configure network settings
+  case 8 Network Settings
+    case 1 Set Network Adapter Address
+    case 2 Set DNS Servers
+  
+Allign it to your parallel universe date and time
+  case 9 Date and Time
+  
+PowerShell time!
+
+Enable AD Services
+  Get-WindowsFeature AD-Domain-Services | Install-WindowsFeature
+
+Create a domain
+  Import-Module ADDSDeployment
+  Install-ADDSForest
+    DomainName:
+    SafeModeAdministratorPassword
+    [A] Yes to All
+
+Wait, Read the Warnings, Notice the VM auto reboots, Wait again as Applying computer settings
+
+
+
+ 
