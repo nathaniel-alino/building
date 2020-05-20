@@ -31,7 +31,7 @@ Create a domain
 
 Wait, Read the Warnings, Notice the VM auto reboots, Wait again as Applying computer settings
 
-Bonus:
+Bonus 1:
 Create another domain admin user and also profess your love of Linux
   New-ADUser -Name "root" -GivenName root -Surname admin -SamAccountName root -UserPrincipalName root@sunlab.com
 
@@ -53,8 +53,20 @@ Finally, enable the new domain admin account
 Marvel at what you have done
   Get-ADUser -Identity root
 
+Bonus 2:
+Add a remote computer to the domain controller from the dc
+  Add-Computer -ComputerName Sun-W10-01 -LocalCredential Sun-W10-01\Administrator -DomainName sunlab -Credential sunlab\root -Restart -Force
+
+Tip:
+  Disable Firewall
+  Enable RPC
+  Enable Remote Desktop Services
+  
+List the computers in the domain
+  Get-ADComputer -Filter *
 
 
+  
 
 
 
