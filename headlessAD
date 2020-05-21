@@ -66,8 +66,22 @@ List the computers in the domain
   Get-ADComputer -Filter *
 
 
-  
+To manage your Ad from a remote Windows 10 computer
+Download the installer from:
+https://www.microsoft.com/en-us/download/details.aspx?id=45520
 
+Select: (Latest as of time of writing on May 2020)
+  WindowsTH-RSAT_WS_1803-x64.msu
+  95.1 MB
+  DS Signed ‎Sunday, ‎25 ‎March ‎2018 2:19:27 pm
+
+Windows Administrative Tools
+Active Directory Administrative Center
+Active Directory Domains and Trusts
+Active Directory Module for Windows PowerShell
+Active Directory Sites and Services
+Active Directory Users and Computers
+ADSI Edit
 
 
 
